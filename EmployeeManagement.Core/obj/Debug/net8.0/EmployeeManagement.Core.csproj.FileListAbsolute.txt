@@ -1,0 +1,11 @@
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/bin/Debug/net8.0/EmployeeManagement.Core.deps.json
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/bin/Debug/net8.0/EmployeeManagement.Core.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/bin/Debug/net8.0/EmployeeManagement.Core.pdb
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/EmployeeManagement.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/EmployeeManagement.Core.AssemblyInfoInputs.cache
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/EmployeeManagement.Core.AssemblyInfo.cs
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/EmployeeManagement.Core.csproj.CoreCompileInputs.cache
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/EmployeeManagement.Core.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/refint/EmployeeManagement.Core.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/EmployeeManagement.Core.pdb
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/ref/EmployeeManagement.Core.dll

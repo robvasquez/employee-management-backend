@@ -1,0 +1,17 @@
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/bin/Debug/net8.0/EmployeeManagement.Application.deps.json
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/bin/Debug/net8.0/EmployeeManagement.Application.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/bin/Debug/net8.0/EmployeeManagement.Application.pdb
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/bin/Debug/net8.0/EmployeeManagement.Core.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/bin/Debug/net8.0/EmployeeManagement.Core.pdb
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/obj/Debug/net8.0/EmployeeManagement.Application.csproj.AssemblyReference.cache
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/obj/Debug/net8.0/EmployeeManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/obj/Debug/net8.0/EmployeeManagement.Application.AssemblyInfoInputs.cache
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/obj/Debug/net8.0/EmployeeManagement.Application.AssemblyInfo.cs
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/obj/Debug/net8.0/EmployeeManagement.Application.csproj.CoreCompileInputs.cache
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/obj/Debug/net8.0/Employee.16DA35CB.Up2Date
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/obj/Debug/net8.0/EmployeeManagement.Application.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/obj/Debug/net8.0/refint/EmployeeManagement.Application.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/obj/Debug/net8.0/EmployeeManagement.Application.pdb
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/obj/Debug/net8.0/ref/EmployeeManagement.Application.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/bin/Debug/net8.0/EmployeeManagement.Infrastructure.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Application/bin/Debug/net8.0/EmployeeManagement.Infrastructure.pdb

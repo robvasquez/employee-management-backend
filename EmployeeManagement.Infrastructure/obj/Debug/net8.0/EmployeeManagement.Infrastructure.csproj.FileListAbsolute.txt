@@ -1,0 +1,17 @@
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/bin/Debug/net8.0/EmployeeManagement.Infrastructure.deps.json
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/bin/Debug/net8.0/EmployeeManagement.Infrastructure.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/bin/Debug/net8.0/EmployeeManagement.Infrastructure.pdb
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/bin/Debug/net8.0/EmployeeManagement.Core.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/bin/Debug/net8.0/EmployeeManagement.Core.pdb
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/EmployeeManagement.Infrastructure.csproj.AssemblyReference.cache
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/EmployeeManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/EmployeeManagement.Infrastructure.AssemblyInfoInputs.cache
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/EmployeeManagement.Infrastructure.AssemblyInfo.cs
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/EmployeeManagement.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/Employee.66F3489C.Up2Date
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/EmployeeManagement.Infrastructure.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/refint/EmployeeManagement.Infrastructure.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/EmployeeManagement.Infrastructure.pdb
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/ref/EmployeeManagement.Infrastructure.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/bin/Debug/net8.0/EmployeeManagement.Infrastructure.runtimeconfig.json
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/EmployeeManagement.Infrastructure.genruntimeconfig.cache

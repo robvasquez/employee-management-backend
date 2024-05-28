@@ -1,0 +1,50 @@
+@EmployeeManagement_WebAPI_HostAddress = http://localhost:5146
+
+### Get all employees
+GET {{EmployeeManagement_WebAPI_HostAddress}}/api/Employee
+Accept: application/json
+
+###
+
+### Get an employee by ID
+GET {{EmployeeManagement_WebAPI_HostAddress}}/api/Employee/1
+Accept: application/json
+
+###
+
+### Add a new employee
+POST {{EmployeeManagement_WebAPI_HostAddress}}/api/Employee
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "hireDate": "2021-05-02",
+  "departmentId": 1,
+  "phone": "123-456-7890",
+  "address": "123 Main St",
+  "isActive": true
+}
+
+###
+
+### Update an employee
+PUT {{EmployeeManagement_WebAPI_HostAddress}}/api/Employee/1
+Content-Type: application/json
+
+{
+  "employeeId": 1,
+  "firstName": "John",
+  "lastName": "Doe",
+  "hireDate": "2021-05-02",
+  "departmentId": 2,
+  "phone": "123-456-7890",
+  "address": "123 Main St",
+  "isActive": true
+}
+
+###
+
+### Delete an employee
+DELETE {{EmployeeManagement_WebAPI_HostAddress}}/api/Employee/1
+Accept: application/json
