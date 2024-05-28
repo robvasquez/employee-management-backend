@@ -127,9 +127,6 @@ namespace EmployeeManagement.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Username")
-                        .IsUnique();
-
                     b.ToTable("users", (string)null);
                 });
 
@@ -142,7 +139,7 @@ namespace EmployeeManagement.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("EmployeeManagement.Core.Entities.Employee", "Employee")
-                        .WithMany()
+                        .WithMany("DepartmentHistories")
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -155,12 +152,22 @@ namespace EmployeeManagement.Infrastructure.Migrations
             modelBuilder.Entity("EmployeeManagement.Core.Entities.Employee", b =>
                 {
                     b.HasOne("EmployeeManagement.Core.Entities.Department", "Department")
-                        .WithMany()
+                        .WithMany("Employees")
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("EmployeeManagement.Core.Entities.Department", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("EmployeeManagement.Core.Entities.Employee", b =>
+                {
+                    b.Navigation("DepartmentHistories");
                 });
 #pragma warning restore 612, 618
         }

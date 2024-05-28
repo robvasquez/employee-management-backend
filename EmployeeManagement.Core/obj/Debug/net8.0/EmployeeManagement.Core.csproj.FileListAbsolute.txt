@@ -9,3 +9,4 @@
 /Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/refint/EmployeeManagement.Core.dll
 /Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/EmployeeManagement.Core.pdb
 /Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/ref/EmployeeManagement.Core.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Core/obj/Debug/net8.0/EmployeeManagement.Core.sourcelink.json

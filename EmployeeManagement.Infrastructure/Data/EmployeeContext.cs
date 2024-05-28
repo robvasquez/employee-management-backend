@@ -12,7 +12,7 @@ public class EmployeeContext : DbContext
     public DbSet<Employee> Employees { get; set; }
     public DbSet<Department> Departments { get; set; }
     public DbSet<DepartmentHistory> DepartmentHistories { get; set; }
-    public DbSet<User> Users { get; set; } // Add this line
+    public DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -20,7 +20,7 @@ public class EmployeeContext : DbContext
         {
             entity.ToTable("employees");
             entity.HasOne(e => e.Department)
-                .WithMany()
+                .WithMany(d => d.Employees)
                 .HasForeignKey(e => e.DepartmentId);
         });
 
@@ -30,20 +30,25 @@ public class EmployeeContext : DbContext
         {
             entity.ToTable("department_histories");
             entity.HasOne(dh => dh.Employee)
-                .WithMany()
+                .WithMany(e => e.DepartmentHistories)
                 .HasForeignKey(dh => dh.EmployeeId);
             entity.HasOne(dh => dh.Department)
                 .WithMany()
                 .HasForeignKey(dh => dh.DepartmentId);
+
+            // Configure StartDate to use UTC
+            entity.Property(dh => dh.StartDate)
+                .HasColumnType("timestamp with time zone")
+                .IsRequired();
         });
 
         modelBuilder.Entity<User>(entity =>
         {
             entity.ToTable("users");
             entity.HasKey(u => u.Id);
-            entity.Property(u => u.Username).IsRequired().HasMaxLength(50);
-            entity.Property(u => u.Password).IsRequired().HasMaxLength(100);
-            entity.Property(u => u.Role).IsRequired().HasMaxLength(20);
+            entity.Property(u => u.Username).IsRequired();
+            entity.Property(u => u.Password).IsRequired();
+            entity.Property(u => u.Role).IsRequired();
         });
     }
 }
