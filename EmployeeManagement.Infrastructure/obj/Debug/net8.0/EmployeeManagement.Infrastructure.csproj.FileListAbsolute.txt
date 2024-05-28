@@ -15,3 +15,4 @@
 /Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/ref/EmployeeManagement.Infrastructure.dll
 /Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/bin/Debug/net8.0/EmployeeManagement.Infrastructure.runtimeconfig.json
 /Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/EmployeeManagement.Infrastructure.genruntimeconfig.cache
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.Infrastructure/obj/Debug/net8.0/EmployeeManagement.Infrastructure.sourcelink.json

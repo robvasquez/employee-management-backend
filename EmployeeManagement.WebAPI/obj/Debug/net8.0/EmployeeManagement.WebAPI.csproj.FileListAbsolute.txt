@@ -118,3 +118,4 @@
 /Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.WebAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.WebAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.WebAPI/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/robvasquez/projects/tests/EmployeeManagement/EmployeeManagement.WebAPI/obj/Debug/net8.0/EmployeeManagement.WebAPI.sourcelink.json

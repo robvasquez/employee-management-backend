@@ -1,0 +1,133 @@
+# .NET Core
+bin/
+obj/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Ignore all DLL files in any nested folder
+**/*.dll
+
+# .NET Core Tooling
+.vscode/
+.history/
+.nuget/
+
+# Visual Studio
+.vs/
+.vscode/
+.vscode-test/
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+*.pid
+*.gz
+*.orig
+*.rej
+*.swo
+*.swp
+*.bak
+*.sw?
+*.DS_Store
+*.directory
+*.venv
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Temporary files
+*.tmp
+*.temp
+*.tmp.*
+
+# Office temporary files
+~$*
+~*.*
+*.~*
+
+# JetBrains Rider
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Mac OS generated files
+.DS_Store
+
+# Windows generated files
+Thumbs.db
+ehthumbs.db
+
+# Linux generated files
+*~
+
+# Crashlytics generated files
+crashlytics-build.properties
+
+# Compiled binary output
+*.exe
+*.so
+*.dylib
+*.class
+
+# NPM
+node_modules/
+
+# Yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# dotenv environment variable files
+.env
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Ignore IDE specific files
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vscode/
+
+# Ignore custom web development files
+dist/
+bower_components/
+node_modules/
+npm-debug.log
+
+# Ignore Composer dependencies
+/vendor/
+
+# Ignore phpstorm
+.idea/
+
+# Ignore translations
+*.po
+*.mo
+
+# Ignore Symfony related
+/app/cache/

@@ -1,9 +1,8 @@
-using EmployeeManagement.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagement.Infrastructure.Data.Repository;
 
-public class UserRepository : IUserRepository
+public class UserRepository
 {
     private readonly EmployeeContext _context;
 
