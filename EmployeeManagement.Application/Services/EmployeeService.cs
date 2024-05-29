@@ -109,7 +109,7 @@ namespace EmployeeManagement.Application.Services
                 {
                     EmployeeId = employeeDto.EmployeeId,
                     DepartmentId = employeeDto.DepartmentId,
-                    StartDate = DateTime.Now
+                    StartDate = DateTime.UtcNow // Ensure the date is in UTC
                 };
                 await _departmentHistoryRepository.AddAsync(departmentHistory);
             }
@@ -125,6 +125,8 @@ namespace EmployeeManagement.Application.Services
 
             await _employeeRepository.UpdateAsync(employee);
         }
+
+
 
         public async Task DeleteEmployeeAsync(int id)
         {

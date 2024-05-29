@@ -35,9 +35,11 @@ namespace EmployeeManagement.Infrastructure.Data.Repository
 
         public async Task AddAsync(DepartmentHistory entity)
         {
+            entity.StartDate = entity.StartDate.ToUniversalTime(); // Ensure the date is in UTC
             await _context.DepartmentHistories.AddAsync(entity);
             await _context.SaveChangesAsync();
         }
+
 
         public async Task UpdateAsync(DepartmentHistory entity)
         {
