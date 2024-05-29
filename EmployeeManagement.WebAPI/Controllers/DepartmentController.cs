@@ -2,57 +2,60 @@ using EmployeeManagement.Application.Interfaces;
 using EmployeeManagement.Core.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace EmployeeManagement.WebAPI.Controllers;
-
-[Authorize]
-[ApiController]
-[Route("api/[controller]")]
-public class DepartmentController : ControllerBase
+namespace EmployeeManagement.WebAPI.Controllers
 {
-    private readonly IDepartmentService _departmentService;
-
-    public DepartmentController(IDepartmentService departmentService)
+    [Authorize]
+    [ApiController]
+    [Route("api/[controller]")]
+    public class DepartmentController : ControllerBase
     {
-        _departmentService = departmentService;
-    }
+        private readonly IDepartmentService _departmentService;
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Department>>> GetAllDepartments()
-    {
-        var departments = await _departmentService.GetAllDepartmentsAsync();
-        return Ok(departments);
-    }
+        public DepartmentController(IDepartmentService departmentService)
+        {
+            _departmentService = departmentService;
+        }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Department>> GetDepartmentById(int id)
-    {
-        var department = await _departmentService.GetDepartmentByIdAsync(id);
-        if (department == null) return NotFound();
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Department>>> GetAllDepartments()
+        {
+            var departments = await _departmentService.GetAllDepartmentsAsync();
+            return Ok(departments);
+        }
 
-        return Ok(department);
-    }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Department>> GetDepartmentById(int id)
+        {
+            var department = await _departmentService.GetDepartmentByIdAsync(id);
+            if (department == null) return NotFound();
 
-    [HttpPost]
-    public async Task<IActionResult> AddDepartment(Department departmentDto)
-    {
-        await _departmentService.AddDepartmentAsync(departmentDto);
-        return CreatedAtAction(nameof(GetDepartmentById), new { id = departmentDto.DepartmentId }, departmentDto);
-    }
+            return Ok(department);
+        }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateDepartment(int id, Department departmentDto)
-    {
-        if (id != departmentDto.DepartmentId) return BadRequest();
+        [HttpPost]
+        public async Task<IActionResult> AddDepartment(Department departmentDto)
+        {
+            await _departmentService.AddDepartmentAsync(departmentDto);
+            return CreatedAtAction(nameof(GetDepartmentById), new { id = departmentDto.DepartmentId }, departmentDto);
+        }
 
-        await _departmentService.UpdateDepartmentAsync(departmentDto);
-        return NoContent();
-    }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateDepartment(int id, Department departmentDto)
+        {
+            if (id != departmentDto.DepartmentId) return BadRequest();
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteDepartment(int id)
-    {
-        await _departmentService.DeleteDepartmentAsync(id);
-        return NoContent();
+            await _departmentService.UpdateDepartmentAsync(departmentDto);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteDepartment(int id)
+        {
+            await _departmentService.DeleteDepartmentAsync(id);
+            return NoContent();
+        }
     }
 }

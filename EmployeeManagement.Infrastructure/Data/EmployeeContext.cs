@@ -22,6 +22,10 @@ public class EmployeeContext : DbContext
             entity.HasOne(e => e.Department)
                 .WithMany(d => d.Employees)
                 .HasForeignKey(e => e.DepartmentId);
+
+            entity.HasMany(e => e.DepartmentHistories)
+                .WithOne(dh => dh.Employee)
+                .HasForeignKey(dh => dh.EmployeeId);
         });
 
         modelBuilder.Entity<Department>(entity => { entity.ToTable("departments"); });

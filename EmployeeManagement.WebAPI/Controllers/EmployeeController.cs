@@ -1,11 +1,9 @@
 using EmployeeManagement.Application.Interfaces;
 using EmployeeManagement.Core.Entities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.WebAPI.Controllers;
 
-[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class EmployeeController : ControllerBase
@@ -29,29 +27,47 @@ public class EmployeeController : ControllerBase
     {
         var employee = await _employeeService.GetEmployeeByIdAsync(id);
         if (employee == null) return NotFound();
-
         return Ok(employee);
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddEmployee(Employee employeeDto)
+    public async Task<ActionResult<Employee>> AddEmployee([FromBody] Employee employee)
     {
-        await _employeeService.AddEmployeeAsync(employeeDto);
-        return CreatedAtAction(nameof(GetEmployeeById), new { id = employeeDto.EmployeeId }, employeeDto);
+        await _employeeService.AddEmployeeAsync(employee);
+        return CreatedAtAction(nameof(GetEmployeeById), new { id = employee.EmployeeId }, employee);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateEmployee(int id, Employee employeeDto)
+    public async Task<IActionResult> UpdateEmployee(int id, [FromBody] Employee employeeDto)
     {
-        if (id != employeeDto.EmployeeId) return BadRequest();
+        if (id != employeeDto.EmployeeId) return BadRequest("Employee ID mismatch");
+
+        var employee = await _employeeService.GetEmployeeByIdAsync(id);
+        if (employee == null) return NotFound();
+
+        if (employee.DepartmentId != employeeDto.Department.DepartmentId)
+        {
+            employeeDto.DepartmentHistories = employeeDto.DepartmentHistories ?? new List<DepartmentHistory>();
+            employeeDto.DepartmentHistories.Add(new DepartmentHistory
+            {
+                EmployeeId = employeeDto.EmployeeId,
+                DepartmentId = employeeDto.Department.DepartmentId,
+                StartDate = DateTime.Now
+            });
+            employeeDto.DepartmentId = employeeDto.Department.DepartmentId;
+        }
 
         await _employeeService.UpdateEmployeeAsync(employeeDto);
         return NoContent();
     }
 
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteEmployee(int id)
     {
+        var employee = await _employeeService.GetEmployeeByIdAsync(id);
+        if (employee == null) return NotFound();
+
         await _employeeService.DeleteEmployeeAsync(id);
         return NoContent();
     }

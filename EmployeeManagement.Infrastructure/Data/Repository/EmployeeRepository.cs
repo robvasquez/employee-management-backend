@@ -20,17 +20,29 @@ namespace EmployeeManagement.Infrastructure.Data.Repository
 
         public async Task<IEnumerable<Employee>> GetAllAsync()
         {
-            return await _context.Employees.Include(e => e.Department).ToListAsync();
+            return await _context.Employees
+                .Include(e => e.Department)
+                .Include(e => e.DepartmentHistories)
+                .ThenInclude(dh => dh.Department)
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<Employee>> GetAllAsync(Expression<Func<Employee, bool>> predicate)
         {
-            return await _context.Employees.Include(e => e.Department).Where(predicate).ToListAsync();
+            return await _context.Employees
+                .Include(e => e.Department)
+                .Include(e => e.DepartmentHistories)
+                .ThenInclude(dh => dh.Department)
+                .Where(predicate)
+                .ToListAsync();
         }
 
         public async Task<Employee> GetByIdAsync(int id)
         {
-            return await _context.Employees.Include(e => e.Department)
+            return await _context.Employees
+                .Include(e => e.Department)
+                .Include(e => e.DepartmentHistories)
+                .ThenInclude(dh => dh.Department)
                 .FirstOrDefaultAsync(e => e.EmployeeId == id);
         }
 

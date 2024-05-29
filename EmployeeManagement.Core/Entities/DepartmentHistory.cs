@@ -1,13 +1,11 @@
-namespace EmployeeManagement.Core.Entities
-{
-    public class DepartmentHistory
-    {
-        public int DepartmentHistoryId { get; set; }
-        public int EmployeeId { get; set; }
-        public int DepartmentId { get; set; }
-        public DateTime StartDate { get; set; }
+using EmployeeManagement.Core.Entities;
 
-        public Employee Employee { get; set; }
-        public Department Department { get; set; }
-    }
+public class DepartmentHistory
+{
+    public int DepartmentHistoryId { get; set; }
+    public int EmployeeId { get; set; }
+    public Employee Employee { get; set; }
+    public int DepartmentId { get; set; }
+    public Department Department { get; set; }
+    public DateTime StartDate { get; set; }
 }

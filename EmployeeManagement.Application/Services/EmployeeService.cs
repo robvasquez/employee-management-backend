@@ -1,17 +1,19 @@
 using EmployeeManagement.Application.Interfaces;
 using EmployeeManagement.Core.Entities;
 using EmployeeManagement.Core.Interfaces;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EmployeeManagement.Application.Services
 {
     public class EmployeeService : IEmployeeService
     {
-        private readonly IRepository<Employee> _employeeRepository;
         private readonly IRepository<DepartmentHistory> _departmentHistoryRepository;
+        private readonly IRepository<Employee> _employeeRepository;
 
-        public EmployeeService(IRepository<Employee> employeeRepository, IRepository<DepartmentHistory> departmentHistoryRepository)
+        public EmployeeService(IRepository<Employee> employeeRepository,
+            IRepository<DepartmentHistory> departmentHistoryRepository)
         {
             _employeeRepository = employeeRepository;
             _departmentHistoryRepository = departmentHistoryRepository;
@@ -31,14 +33,24 @@ namespace EmployeeManagement.Application.Services
                 Phone = e.Phone,
                 Address = e.Address,
                 IsActive = e.IsActive,
-                Department = new Department { DepartmentId = e.Department.DepartmentId, Name = e.Department.Name }
+                Department = new Department { DepartmentId = e.Department.DepartmentId, Name = e.Department.Name },
+                DepartmentHistories = e.DepartmentHistories?.Select(dh => new DepartmentHistory
+                {
+                    DepartmentHistoryId = dh.DepartmentHistoryId,
+                    EmployeeId = dh.EmployeeId,
+                    DepartmentId = dh.DepartmentId,
+                    StartDate = dh.StartDate,
+                    Department = new Department { DepartmentId = dh.Department.DepartmentId, Name = dh.Department.Name }
+                }).ToList() ?? new List<DepartmentHistory>() // Ensure empty list if null
             });
         }
 
         public async Task<Employee> GetEmployeeByIdAsync(int id)
         {
             var employee = await _employeeRepository.GetByIdAsync(id);
-            // Mapping to DTO logic
+            if (employee == null)
+                return null;
+
             return new Employee
             {
                 EmployeeId = employee.EmployeeId,
@@ -49,15 +61,29 @@ namespace EmployeeManagement.Application.Services
                 Phone = employee.Phone,
                 Address = employee.Address,
                 IsActive = employee.IsActive,
-                Department =
-                    new Department { DepartmentId = employee.Department.DepartmentId, Name = employee.Department.Name }
+                Department = new Department
+                {
+                    DepartmentId = employee.Department.DepartmentId,
+                    Name = employee.Department.Name
+                },
+                DepartmentHistories = employee.DepartmentHistories?.Select(dh => new DepartmentHistory
+                {
+                    DepartmentHistoryId = dh.DepartmentHistoryId,
+                    EmployeeId = dh.EmployeeId,
+                    DepartmentId = dh.DepartmentId,
+                    StartDate = dh.StartDate,
+                    Department = new Department
+                    {
+                        DepartmentId = dh.Department.DepartmentId,
+                        Name = dh.Department.Name
+                    }
+                }).ToList() ?? new List<DepartmentHistory>()
             };
-            
         }
+
 
         public async Task AddEmployeeAsync(Employee employee)
         {
-            // Mapping from DTO to Entity logic
             await _employeeRepository.AddAsync(employee);
 
             // Add initial department history
@@ -73,6 +99,8 @@ namespace EmployeeManagement.Application.Services
         public async Task UpdateEmployeeAsync(Employee employeeDto)
         {
             var employee = await _employeeRepository.GetByIdAsync(employeeDto.EmployeeId);
+            if (employee == null)
+                return;
 
             // Check if the department has changed
             if (employee.DepartmentId != employeeDto.DepartmentId)
@@ -101,6 +129,9 @@ namespace EmployeeManagement.Application.Services
         public async Task DeleteEmployeeAsync(int id)
         {
             var employee = await _employeeRepository.GetByIdAsync(id);
+            if (employee == null)
+                return;
+
             await _employeeRepository.DeleteAsync(employee);
         }
     }
